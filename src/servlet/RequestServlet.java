@@ -1,20 +1,97 @@
 package servlet;
 
+import java.beans.IntrospectionException;
+import java.beans.PropertyDescriptor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.rmi.server.ObjID;
 import java.util.Enumeration;
+import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.beanutils.BeanUtils;
+
+import domain.User;
 
 public class RequestServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+//		test7(request);
+//		test8(request);
+//		test9(request);
+//		test10(request);
+	}
+	private void test10(HttpServletRequest request) throws IOException {
+		//输入流
+		ServletInputStream in = request.getInputStream();
+		int len = -1;
+		byte b[] = new byte[1024];
+		while((len=in.read(b))!=-1){
+			System.out.println(new String(b,0,len));
+		}
+	}
+	private void test9(HttpServletRequest request) {
+		//Beanutils类进行封装。
+		User user  = new User();
+		try {
+			BeanUtils.populate(user, request.getParameterMap());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		System.out.println(user);
+	}
+	private void test8(HttpServletRequest request) {
+		//map+内省读取数据到javabean
+		Map<String, String[]> map = request.getParameterMap();
+		User user = new User();
+		for(Map.Entry<String, String[]> me : map.entrySet()){
+			String paraName = me.getKey();
+			String[] values = me.getValue();
+			try {
+				PropertyDescriptor pd = new PropertyDescriptor(paraName, User.class);
+				Method m = pd.getWriteMethod();
+				if(values.length>1)
+					m.invoke(user, (Object)values);
+				else
+					m.invoke(user, values);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		System.out.println(user);
+	}
+	private void test7(HttpServletRequest request) {
+		//内省封装javabean 表单输入域的名称要求与JAVABean中的属性一致
+		Enumeration<String> en = request.getParameterNames();
+		User user = new User();
+		System.out.println(user);
+		while (en.hasMoreElements()) {
+			String paraName = (String) en.nextElement();
+			String[] values = request.getParameterValues(paraName);
+			try {
+				PropertyDescriptor pd = new PropertyDescriptor(paraName, User.class);
+				Method m = pd.getWriteMethod();
+				if(values.length>1)
+					m.invoke(user, (Object)values);
+				else
+					m.invoke(user, values);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		System.out.println(user);
 	}
 	private void test6(HttpServletRequest request)
 			throws UnsupportedEncodingException {
