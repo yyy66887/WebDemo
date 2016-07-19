@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <servlet>
+    <servlet-name>LifeServlet</servlet-name>
+    <servlet-class>servlet.LifeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ContextServlet</servlet-name>
+    <servlet-class>servlet.ContextServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ResponseServlet</servlet-name>
+    <servlet-class>servlet.ResponseServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RequestServlet</servlet-name>
+    <servlet-class>servlet.RequestServlet</servlet-class>
+  </servlet>
+
+
+ 
+
+
+
+  <servlet-mapping>
+    <servlet-name>LifeServlet</servlet-name>
+    <url-pattern>/servlet/LifeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContextServlet</servlet-name>
+    <url-pattern>/servlet/ContextServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResponseServlet</servlet-name>
+    <url-pattern>/servlet/ResponseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestServlet</servlet-name>
+    <url-pattern>/servlet/RequestServlet</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
