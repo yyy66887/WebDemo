@@ -19,6 +19,41 @@
     <servlet-name>RequestServlet</servlet-name>
     <servlet-class>servlet.RequestServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <servlet-class>servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>servlet.CookieServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CookieClearServlet</servlet-name>
+    <servlet-class>servlet.CookieClearServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <servlet-class>app1.LoginUIServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>app1.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowBookServlet</servlet-name>
+    <servlet-class>app2cookiedemo.ShowBookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowBookDetailServlet</servlet-name>
+    <servlet-class>app2cookiedemo.ShowBookDetailServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
 
 
  
@@ -40,6 +75,34 @@
   <servlet-mapping>
     <servlet-name>RequestServlet</servlet-name>
     <url-pattern>/servlet/RequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>/servlet/DispatcherServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/servlet/CookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CookieClearServlet</servlet-name>
+    <url-pattern>/servlet/CookieClearServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <url-pattern>/servlet/LoginUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowBookServlet</servlet-name>
+    <url-pattern>/servlet/ShowBookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowBookDetailServlet</servlet-name>
+    <url-pattern>/servlet/ShowBookDetailServlet</url-pattern>
   </servlet-mapping>
 
 
