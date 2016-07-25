@@ -47,6 +47,36 @@
     <servlet-name>ShowBookDetailServlet</servlet-name>
     <servlet-class>app2cookiedemo.ShowBookDetailServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>servlet.SessionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SessionServlet2</servlet-name>
+    <servlet-class>servlet.SessionServlet2</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowAllBooksServlet</servlet-name>
+    <servlet-class>app3sessiondemo.ShowAllBooksServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BuyServlet</servlet-name>
+    <servlet-class>app3sessiondemo.BuyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowServlet</servlet-name>
+    <servlet-class>app3sessiondemo.ShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CenterController</servlet-name>
+    <servlet-class>app4controller.CenterController</servlet-class>
+  </servlet>
+
+
+
+
+
+
 
 
 
@@ -104,6 +134,33 @@
     <servlet-name>ShowBookDetailServlet</servlet-name>
     <url-pattern>/servlet/ShowBookDetailServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/servlet/SessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionServlet2</servlet-name>
+    <url-pattern>/servlet/SessionServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllBooksServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllBooksServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BuyServlet</servlet-name>
+    <url-pattern>/servlet/BuyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowServlet</servlet-name>
+    <url-pattern>/servlet/ShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CenterController</servlet-name>
+    <url-pattern>/servlet/CenterController</url-pattern>
+  </servlet-mapping>
+<welcome-file-list>
+ <welcome-file>/WEB-INF/index.jsp</welcome-file>
+</welcome-file-list>
 
 
 </web-app>
